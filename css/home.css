@@ -109,7 +109,7 @@ transform: rotateY(180deg);
 }
 @media(max-width:405px){
     .memory-game-blocks{
-        grid-template-columns: repeat(2, minmax(212px, 1fr)) !important;
+        grid-template-columns: repeat(2, minmax(181px, 1fr)) !important;
         margin: 5rem 0 0 !important;
         display: grid;
         width: 100% !important;
@@ -118,7 +118,7 @@ transform: rotateY(180deg);
     } 
     .control-button span{
         top: 55% !important;
-        width: 61%;
+        width:73%;
         text-align: center;
     }
     .info{
@@ -145,7 +145,7 @@ transform: rotateY(180deg);
 }
 @media(min-width:406px) and (max-width:451px){
     .memory-game-blocks{
-        grid-template-columns: repeat(2, minmax(242px, 1fr)) !important;
+        grid-template-columns: repeat(2, minmax(222px, 1fr)) !important;
         margin: 5rem 0 0 !important;
         display: grid;
         width: 103% !important;
@@ -219,6 +219,21 @@ transform: rotateY(180deg);
         display: grid;
         grid-template-columns: repeat(3,minmax(250px,1fr)) !important;
     } 
+}
+@media(min-width:668px) and (max-width:890px){
+    .memory-game-blocks{
+    display: grid;
+    grid-template-columns: repeat(3, minmax(113px, 1fr)) !important;
+    grid-template-rows: repeat(6, minmax(250px, 1fr)) !important;
+    width: 798px !important;
+    margin: 20px auto;
+}
+.info{
+    width: 760px !important;
+}
+.control-button span{
+    top:30% !important;
+}
 }
 .Level-completed{
     display: none;
