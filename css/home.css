@@ -102,22 +102,117 @@ transform: rotateY(180deg);
 .memory-game-blocks.no-clicking,.memory-game-blocks.first-clicking{
     pointer-events: none;
 }
-@media(max-width:450px){
-    .memory-game-blocks{
-        margin: 5rem 0 0 !important;
-        display: grid;
-        grid-template-columns: repeat(2,minmax(250px,1fr)) !important;
-    } 
-    .control-button span{
-        top: 35% !important;
+@media(max-width:1200px){
+    .info{
+        margin: 50px !important;
     }
 }
-@media(min-width:450px) and (max-width:616px){
+@media(max-width:405px){
     .memory-game-blocks{
+        grid-template-columns: repeat(2, minmax(212px, 1fr)) !important;
+        margin: 5rem 0 0 !important;
+        display: grid;
+        width: 100% !important;
+        grid-template-rows: repeat(6, minmax(34px, 1fr));
+        /* column-gap: 43px; */
+    } 
+    .control-button span{
+        top: 55% !important;
+        width: 61%;
+        text-align: center;
+    }
+    .info{
+        margin: 19px !important;
+        width: 330px !important;
+        padding: 20px 8px!important;
+    }
+    .memory-game-blocks .game-block{
+        height: 150px !important;
+        width: 150px;
+    }
+    .memory-game-blocks .game-block .front{
+        background-color: var(--dark-color);
+        line-height: 140px !important;
+    }
+    .memory-game-blocks .game-block .front::before{
+        font-size:120px !important;
+    }
+    .memory-game-blocks .game-block .back img{
+    width: 80px !important;
+    height: 80px !important;
+    margin-top: 30px;
+    }
+}
+@media(min-width:406px) and (max-width:451px){
+    .memory-game-blocks{
+        grid-template-columns: repeat(2, minmax(242px, 1fr)) !important;
+        margin: 5rem 0 0 !important;
+        display: grid;
+        width: 103% !important;
+        grid-template-rows: repeat(6, minmax(34px, 1fr));
+    } 
+    .control-button span{
+        top: 55% !important;
+        width: 60%;
+        text-align: center;
+    }
+    .info{
+        margin: 19px !important;
+        width: 350px !important;
+        padding: 20px 8px!important;
+    }
+    .memory-game-blocks .game-block{
+        height: 150px !important;
+        width: 150px;
+    }
+    .memory-game-blocks .game-block .front{
+        background-color: var(--dark-color);
+        line-height: 140px !important;
+    }
+    .memory-game-blocks .game-block .front::before{
+        font-size:120px !important;
+    }
+    .memory-game-blocks .game-block .back img{
+    width: 80px !important;
+    height: 80px !important;
+    margin-top: 30px;
+    }
+
+}
+@media(min-width:452px) and (max-width:580px){
+    .memory-game-blocks{
+        grid-template-columns:   repeat(3, minmax(204px, 1fr)) !important;
         margin: 6rem 0 0 !important;
         display: grid;
-        grid-template-columns: repeat(3,minmax(250px,1fr)) !important;
-    } 
+        width: 50% !important;
+        grid-template-rows: repeat(5, minmax(34px, 1fr));
+    }
+    .info{
+        margin: 19px !important;
+        width: 536px!important;
+        padding: 20px 8px!important;
+    }
+    .control-button span{
+        top: 55% !important;
+        width: 60%;
+        text-align: center;
+    }
+    .memory-game-blocks .game-block{
+        height: 160px !important;
+        width: 150px;
+    }
+    .memory-game-blocks .game-block .front{
+        background-color: var(--dark-color);
+        line-height: 140px !important;
+    }
+    .memory-game-blocks .game-block .front::before{
+        font-size:150px !important;
+    }
+    .memory-game-blocks .game-block .back img{
+    width: 80px !important;
+    height: 80px !important;
+    margin-top: 30px;
+    }
 }
 @media(min-width:617px) and (max-width:667px){
     .memory-game-blocks{
@@ -125,8 +220,36 @@ transform: rotateY(180deg);
         grid-template-columns: repeat(3,minmax(250px,1fr)) !important;
     } 
 }
-@media(max-width:1200px){
-    .info{
-        margin: 50px !important;
-    }
+.Level-completed{
+    display: none;
+    position:fixed;
+left:0;
+top:0;
+width: 100%;
+height: 100%;
+text-align: center;
+z-index: 2;
+background-color: var(--pink-color);
+}
+.Level-completed div{
+    display: flex;
+    flex-direction:column;
+padding: 20px 50px;
+position: absolute;
+left: 50%;
+cursor: pointer;
+top: 50%;
+transform: translate(-50%,-50%);
+color: var(--main-color);
+background-color: var(--rosy-color);
+font-size: 150%;
+border-radius: 25px;
+}
+a{
+    text-decoration: none;
+    color: var(--main-color);
+    background-color: #85417f;
+    box-shadow: 0 0 25px #d19dd6;
+    cursor: pointer;
+    border-radius: 25px;
 }
