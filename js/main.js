@@ -3,6 +3,7 @@ let user=document.querySelector('.name span');
 let backBtn=document.querySelector('.control-button');
 let blocksContainer=document.querySelector('.memory-game-blocks');
 let duration = 1000;
+let count=0;
 button.onclick=()=>{
 let yourname=prompt("what is your name");
 if(yourname === "NULL" || yourname.trim()===""){
@@ -59,14 +60,24 @@ function checkMatchedBLocks(firstBlock,secondBlock){
         
         firstBlock.classList.add('has-match');
         secondBlock.classList.add('has-match');
+        document.getElementById('success').play();
+          // if all block are matched  add backbtn and change its inner html
+        if (blocks.every(block => block.classList.contains('has-match'))) {
+            document.querySelector('.Level-completed').style.display='flex'; // Show back button
+            document.querySelector('.Level-completed span').innerHTML=`Your score is ${100-(count*10)}`;
+        }
     }
     else{
         triesElement.innerHTML=parseInt(triesElement.innerHTML) + 1;
+        count++;
+        document.getElementById('fail').play();
         setTimeout(()=>{
             firstBlock.classList.remove('is-flipped');
             secondBlock.classList.remove('is-flipped');
         },duration);
     }
+
+    
 }
 function shuffle(array){
     let current=array.length,temp,random;
